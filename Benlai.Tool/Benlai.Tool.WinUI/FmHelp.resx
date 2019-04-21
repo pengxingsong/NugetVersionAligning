@@ -122,15 +122,11 @@
 
 用此工具时，即视为包的版本号存在且有效。
 
-工具只完成nuget包版本号异常修复的情况,不处理包的自动更新下载等功能。
-主要目的是：当一个sln工程很大时，使用微软自带nuget工具修复版本号时
-每次会触发检查和下载导致需要等待很长时间。
+工具只完成nuget包版本号异常修复的情况,不处理包的自动更新下载等功能。主要目的是：当一个sln工程很大时，使用微软自带nuget工具修复版本号时每次会触发检查和下载导致需要等待很长时间。
 
 1.以.csproj文件读取参考线.
-A.假设.csproj中存在包引用(即Reference节点),package.config中没有包引用,
-当执行对齐版本功能时,工具会在package.config文件中加入&lt;package&gt;节点
-B.假设.csproj中不存在包引用(即Reference节点),package.config中存在包引用,
-工具则视为此项目不使用该包,即被排除在外.
+A.假设.csproj中存在包引用(即Reference节点),package.config中没有包引用,当执行对齐版本功能时,工具会在package.config文件中加入&lt;package&gt;节点
+B.假设.csproj中不存在包引用(即Reference节点),package.config中存在包引用,工具则视为此项目不使用该包,即被排除在外.
 
 2.修复版本号规则
 1.按包最多引用量为第一优先级
